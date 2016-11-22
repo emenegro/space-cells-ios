@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  SpaceCells
+
+  Created by Mario on 23/11/16.
+  Copyright © 2016 Mario Negro. All rights reserved.
+*/
+
+"txt_app_name" = "Space Cells";
+"txt_info" = "Information";
+"txt_accept" = "Accept";
