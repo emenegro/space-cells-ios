@@ -1,5 +1,5 @@
 //
-//  SPCTableViewProtocols.swift
+//  SPCPresenter+Table.swift
 //  SpaceCells
 //
 //  Created by Mario on 22/11/16.
@@ -8,34 +8,25 @@
 
 import Foundation
 
-protocol SPCCollectionDataSource {
-    var numberOfSections: Int { get }
-    var numberOfRows: Int { get }
-    func dataForRowAtIndexPath(indexPath: IndexPath) -> SPCCellViewModel?
-}
-
-protocol SPCCollectionDelegate {
-    func rowSelectedAtIndexPath(indexPath: IndexPath)
-}
-
-extension SPCPresenterImpl: SPCCollectionDataSource {
+extension SPCPresenterImpl: CollectionDataSource {
     
     var numberOfSections: Int {
         return 1
     }
     
     var numberOfRows: Int {
-        return data.count
+        return viewModels.count
     }
     
-    func dataForRowAtIndexPath(indexPath: IndexPath) -> SPCCellViewModel? {
-        return data[indexPath.row]
+    func dataForRowAtIndexPath<SPCPosterCellViewModel>(indexPath: IndexPath) -> SPCPosterCellViewModel? {
+        return viewModels[indexPath.row] as? SPCPosterCellViewModel
     }
 }
 
-extension SPCPresenterImpl: SPCCollectionDelegate {
+extension SPCPresenterImpl: CollectionDelegate {
     
     func rowSelectedAtIndexPath(indexPath: IndexPath) {
-        router.navigateToDetail(viewModel: data[indexPath.row])
+        let poster = posters[indexPath.row]
+        router.navigateToDetail(title: poster.title, imageName: poster.imageName)
     }
 }

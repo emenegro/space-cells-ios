@@ -13,7 +13,7 @@ protocol SPCRepository {
 }
 
 protocol SPCRepositoryOutput: class {
-    func onPosters(posters: [SpacePoster])
+    func onPosters(posters: [SPCPoster])
 }
 
 class SPCRepositoryImpl {

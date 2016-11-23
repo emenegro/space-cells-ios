@@ -15,20 +15,21 @@ protocol SPCView: class {
 class SPCViewController: UIViewController {
     
     let presenter: SPCPresenter
-    let tableViewDataSource: SPCCollectionDataSource
-    let tableViewDelegate: SPCCollectionDelegate
+    let tableViewDataSource: CollectionDataSource
+    let tableViewDelegate: CollectionDelegate
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.rowHeight = SPCCell.cellFixedHeight
-        tableView.register(SPCCell.self, forCellReuseIdentifier: SPCCell.cellIdentifier)
+        tableView.rowHeight = SPCPosterCell.cellFixedHeight
+        tableView.separatorStyle = .none
+        tableView.register(SPCPosterCell.self, forCellReuseIdentifier: SPCPosterCell.cellIdentifier)
         return tableView
     }()
     
-    init(presenter: SPCPresenter, tableViewDataSource: SPCCollectionDataSource, tableViewDelegate: SPCCollectionDelegate) {
+    init(presenter: SPCPresenter, tableViewDataSource: CollectionDataSource, tableViewDelegate: CollectionDelegate) {
         self.presenter = presenter
         self.tableViewDataSource = tableViewDataSource
         self.tableViewDelegate = tableViewDelegate
@@ -44,7 +45,8 @@ extension SPCViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
+        edgesForExtendedLayout = UIRectEdge(rawValue: 0)
+        view.backgroundColor = AppColors.background
         title = presenter.title
         
 		view.addSubview(tableView)

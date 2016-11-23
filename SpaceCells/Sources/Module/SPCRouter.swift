@@ -10,30 +10,31 @@ import UIKit
 
 class SPCRouter {
     
-    func navigateToDetail(viewModel: SPCCellViewModel) {
-        print("Navigating to detail of index \(viewModel.index)")
+    let mainRouter: MainRouter
+    
+    init(mainRouter: MainRouter) {
+        self.mainRouter = mainRouter
     }
     
-    func showInfo(viewModel: SPCCellViewModel) {
-        let infoString = NSLocalizedString("txt_info", comment: "")
-        let acceptString = NSLocalizedString("txt_accept", comment: "")
-        let alertController = UIAlertController(title: infoString, message: viewModel.secondaryText, preferredStyle: .alert)
-        let acceptAction = UIAlertAction(title: acceptString, style: .cancel, handler: { [weak alertController] (action) -> Void in
-            alertController?.dismiss(animated: true, completion: nil)
-        })
-        alertController.addAction(acceptAction)
-        UIApplication.shared.keyWindow?.rootViewController?.present(alertController, animated: true, completion: nil)
+    func navigateToDetail(title: String, imageName: String) {
+        let detailViewController = SPCPosterDetailViewController(title: title, imageName: imageName)
+        mainRouter.show(viewController: detailViewController, sender: self)
+    }
+    
+    func showInfo(title: String, message: String) {
+        let infoViewController = SPCPosterInfoViewController(title: title, message: message)
+        mainRouter.present(viewController: infoViewController, animated: true, completion: nil)
     }
 }
 
 extension SPCRouter: ModuleFactory {
     
-    static func create() -> UIViewController {
+    static func create(mainRouter: MainRouter) -> UIViewController {
         
         let localDataSource = SPCLocalDataSourceImpl()
         let repository = SPCRepositoryImpl(localDataSource: localDataSource)
         let interactor = GetSpacePostersImpl(repository: repository)
-        let router = SPCRouter()
+        let router = SPCRouter(mainRouter: mainRouter)
         let presenter = SPCPresenterImpl(interactor: interactor, router: router)
         let view = SPCViewController(presenter: presenter, tableViewDataSource: presenter, tableViewDelegate: presenter)
         

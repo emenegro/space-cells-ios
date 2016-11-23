@@ -9,5 +9,5 @@
 import UIKit
 
 protocol ModuleFactory {
-    static func create() -> UIViewController
+    static func create(mainRouter: MainRouter) -> UIViewController
 }

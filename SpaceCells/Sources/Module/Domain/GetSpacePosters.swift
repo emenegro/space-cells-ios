@@ -13,7 +13,7 @@ protocol GetSpacePosters {
 }
 
 protocol GetSpacePostersOutput: class {
-    func onPosters(posters: [SpacePoster])
+    func onPosters(posters: [SPCPoster])
 }
 
 class GetSpacePostersImpl {
@@ -35,7 +35,7 @@ extension GetSpacePostersImpl: GetSpacePosters {
 
 extension GetSpacePostersImpl: SPCRepositoryOutput {
     
-    func onPosters(posters: [SpacePoster]) {
+    func onPosters(posters: [SPCPoster]) {
         output?.onPosters(posters: posters)
     }
 }

@@ -20,11 +20,11 @@ extension SPCViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SPCCell.cellIdentifier) as? SPCCell else {
-            return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SPCPosterCell.cellIdentifier) as? SPCPosterCell else {
+            fatalError("Cannot dequeue cell with identifier \(SPCPosterCell.cellIdentifier)")
         }
         
-        if let viewModel = tableViewDataSource.dataForRowAtIndexPath(indexPath: indexPath) {
+        if let viewModel: SPCPosterCellViewModel = tableViewDataSource.dataForRowAtIndexPath(indexPath: indexPath) {
             cell.setViewModel(viewModel: viewModel)
         }
         

@@ -1,5 +1,5 @@
 //
-//  SpacePoster.swift
+//  SPCPoster.swift
 //  SpaceCells
 //
 //  Created by Mario on 22/11/16.
@@ -8,8 +8,9 @@
 
 import Foundation
 
-struct SpacePoster {
+struct SPCPoster {
     let title: String
     let subtitle: String
+    let description: String
     let imageName: String
 }

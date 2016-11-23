@@ -18,11 +18,38 @@ class SPCPresenterImpl {
     let interactor: GetSpacePosters
     let router: SPCRouter
     weak var view: SPCView?
-    var data: [SPCCellViewModel] = []
+    var posters: [SPCPoster] = []
+    var viewModels: [SPCPosterCellViewModel] = []
     
     init(interactor: GetSpacePosters, router: SPCRouter) {
         self.interactor = interactor
         self.router = router
+    }
+    
+    fileprivate func populateViewModels() {
+        
+        var viewModels: [SPCPosterCellViewModel] = []
+        
+        for (index, poster) in posters.enumerated() {
+            
+            let selectionBlock: SPCPosterCellViewModelInfoSelectionBlock = { [weak self] index in
+                if let poster = self?.posters[index] {
+                    self?.router.showInfo(title: poster.title, message: poster.description)
+                }
+            }
+            
+            let viewModel = SPCPosterCellViewModel(
+                index: index,
+                title: poster.title,
+                subtitle: poster.subtitle,
+                imageName: poster.imageName,
+                infoButtonSelectionBlock: selectionBlock
+            )
+            
+            viewModels.append(viewModel)
+        }
+        
+        self.viewModels = viewModels
     }
 }
 
@@ -39,30 +66,9 @@ extension SPCPresenterImpl: SPCPresenter {
 
 extension SPCPresenterImpl: GetSpacePostersOutput {
     
-    func onPosters(posters: [SpacePoster]) {
-        
-        var data: [SPCCellViewModel] = []
-        
-        for (index, poster) in posters.enumerated() {
-            
-            let selectionBlock: SPCCellViewModelInfoSelectionBlock = { [weak self] index in
-                if let viewModel = self?.data[index] {
-                    self?.router.showInfo(viewModel: viewModel)
-                }
-            }
-        
-            let viewModel = SPCCellViewModel(
-                index: index,
-                text: poster.title,
-                secondaryText: poster.subtitle,
-                imageName: poster.imageName,
-                infoButtonSelectionBlock: selectionBlock
-            )
-            
-            data.append(viewModel)
-        }
-        
-        self.data = data
+    func onPosters(posters: [SPCPoster]) {
+        self.posters = posters
+        populateViewModels()
         view?.reloadData()
     }
 }
