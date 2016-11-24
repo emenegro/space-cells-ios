@@ -25,7 +25,7 @@ class SPCViewController: UIViewController {
         tableView.delegate = self
         tableView.rowHeight = SPCPosterCell.cellFixedHeight
         tableView.separatorStyle = .none
-        tableView.register(SPCPosterCell.self, forCellReuseIdentifier: SPCPosterCell.cellIdentifier)
+        tableView.register(SPCPosterCell.self)
         return tableView
     }()
     

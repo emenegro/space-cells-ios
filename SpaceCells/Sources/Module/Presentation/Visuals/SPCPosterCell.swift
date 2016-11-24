@@ -19,7 +19,6 @@ struct SPCPosterCellViewModel {
 
 class SPCPosterCell: UITableViewCell {
 
-    static let cellIdentifier = String(describing: SPCPosterCell.self)
     static let cellFixedHeight: CGFloat = 200
     fileprivate var viewModel: SPCPosterCellViewModel!
     
@@ -70,19 +69,21 @@ class SPCPosterCell: UITableViewCell {
         button.rightAnchor.constraint(equalTo: self.titleLabel.rightAnchor).isActive = true
         return button
     }()
+    
+    @objc func infoButtonTouchedUpInside() {
+        viewModel.infoButtonSelectionBlock(viewModel.index)
+    }
 }
 
-extension SPCPosterCell {
+extension SPCPosterCell: CollectionViewModelConfigurable {
+
+    typealias ViewModelType = SPCPosterCellViewModel
     
-    func setViewModel(viewModel: SPCPosterCellViewModel) {
+    func configure(viewModel: ViewModelType) {
         self.viewModel = viewModel
         posterImageView.image = UIImage(named: viewModel.imageName)
         titleLabel.text = viewModel.title
         subtitleLabel.text = viewModel.subtitle
         button.addTarget(self, action: #selector(SPCPosterCell.infoButtonTouchedUpInside), for: .touchUpInside)
-    }
-    
-    @objc func infoButtonTouchedUpInside() {
-        viewModel.infoButtonSelectionBlock(viewModel.index)
     }
 }

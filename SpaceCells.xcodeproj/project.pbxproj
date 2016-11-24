@@ -26,6 +26,7 @@
 		3A5C12E51DE65001000276E0 /* SPCPosterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12E21DE65001000276E0 /* SPCPosterDetailViewController.swift */; };
 		3A5C12E61DE65001000276E0 /* SPCPosterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12E31DE65001000276E0 /* SPCPosterInfoViewController.swift */; };
 		3A5C12EA1DE652F7000276E0 /* CollectionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12E91DE652F7000276E0 /* CollectionProtocols.swift */; };
+		3A5C12EE1DE77305000276E0 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12ED1DE77305000276E0 /* Reusable.swift */; };
 		3A83B6731DE5060400F2382B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A83B6721DE5060400F2382B /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		3A5C12E21DE65001000276E0 /* SPCPosterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPCPosterDetailViewController.swift; sourceTree = "<group>"; };
 		3A5C12E31DE65001000276E0 /* SPCPosterInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPCPosterInfoViewController.swift; sourceTree = "<group>"; };
 		3A5C12E91DE652F7000276E0 /* CollectionProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionProtocols.swift; sourceTree = "<group>"; };
+		3A5C12ED1DE77305000276E0 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		3A83B6721DE5060400F2382B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 				3A5C12E91DE652F7000276E0 /* CollectionProtocols.swift */,
 				3A5C12BC1DE62428000276E0 /* MainRouter.swift */,
 				3A59AEE41DE4D5F6002CE5BE /* ModuleFactory.swift */,
+				3A5C12ED1DE77305000276E0 /* Reusable.swift */,
 				3A5C12C21DE63259000276E0 /* VisualConstants.swift */,
 			);
 			path = Utils;
@@ -261,6 +264,7 @@
 				3A5C12D41DE63F41000276E0 /* SPCPoster.swift in Sources */,
 				3A5C12EA1DE652F7000276E0 /* CollectionProtocols.swift in Sources */,
 				3A5C12E51DE65001000276E0 /* SPCPosterDetailViewController.swift in Sources */,
+				3A5C12EE1DE77305000276E0 /* Reusable.swift in Sources */,
 				3A5C12D71DE63F41000276E0 /* GetSpacePosters.swift in Sources */,
 				3A5C12D51DE63F41000276E0 /* SPCDataSource.swift in Sources */,
 			);

@@ -18,8 +18,8 @@ extension SPCPresenterImpl: CollectionDataSource {
         return viewModels.count
     }
     
-    func dataForRowAtIndexPath<SPCPosterCellViewModel>(indexPath: IndexPath) -> SPCPosterCellViewModel? {
-        return viewModels[indexPath.row] as? SPCPosterCellViewModel
+    func viewModelForRowAtIndexPath<T>(indexPath: IndexPath) -> T? {
+        return viewModels[indexPath.row] as? T
     }
 }
 
