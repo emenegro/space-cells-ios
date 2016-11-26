@@ -1,10 +1,10 @@
 
 import UIKit
 
-class SPCVerticalPosterCell: UITableViewCell {
+class VerticalPosterCell: UITableViewCell {
 
     static let cellFixedHeight: CGFloat = 200
-    fileprivate var viewModel: SPCPosterCellViewModel!
+    fileprivate var viewModel: PosterCellViewModel?
     
     lazy var posterImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect.zero)
@@ -57,7 +57,7 @@ class SPCVerticalPosterCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
-        button.addTarget(self, action: #selector(SPCVerticalPosterCell.infoButtonTouchedUpInside), for: .touchUpInside)
+        button.addTarget(self, action: #selector(VerticalPosterCell.infoButtonTouchedUpInside), for: .touchUpInside)
         backgroundColor = AppColors.background
         tintColor = AppColors.tint
         selectionStyle = .none
@@ -68,20 +68,20 @@ class SPCVerticalPosterCell: UITableViewCell {
     }
 }
 
-extension SPCVerticalPosterCell {
+extension VerticalPosterCell {
     
     override func prepareForReuse() {
         configure(viewModel: nil)
     }
     
     @objc func infoButtonTouchedUpInside() {
-        viewModel.infoButtonSelectionBlock()
+        viewModel?.infoButtonSelectionBlock()
     }
 }
 
-extension SPCVerticalPosterCell: CollectionViewModelConfigurable {
+extension VerticalPosterCell: CollectionViewModelConfigurable {
 
-    typealias ViewModelType = SPCPosterCellViewModel
+    typealias ViewModelType = PosterCellViewModel
     
     func configure(viewModel: ViewModelType?) {
         self.viewModel = viewModel

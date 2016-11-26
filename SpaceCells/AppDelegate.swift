@@ -10,7 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let window = UIWindow()
         let mainRouter = MainRouterImpl(window: window)
-        let rootViewController = SPCRouter.create(withMainRouter: mainRouter)
+        let rootViewController = ListRouter.create(withMainRouter: mainRouter)
         let navigationController = UINavigationController(rootViewController: rootViewController)
         
         window.rootViewController = navigationController

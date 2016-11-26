@@ -13,19 +13,20 @@
 		3A59AEEF1DE4D5F6002CE5BE /* ModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A59AEE41DE4D5F6002CE5BE /* ModuleFactory.swift */; };
 		3A5C12BD1DE62428000276E0 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12BC1DE62428000276E0 /* MainRouter.swift */; };
 		3A5C12C31DE63259000276E0 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12C21DE63259000276E0 /* AppAppearance.swift */; };
-		3A5C12D51DE63F41000276E0 /* SPCDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12C71DE63F41000276E0 /* SPCDataSource.swift */; };
-		3A5C12D61DE63F41000276E0 /* SPCRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12C81DE63F41000276E0 /* SPCRepository.swift */; };
+		3A5C12D51DE63F41000276E0 /* PostersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12C71DE63F41000276E0 /* PostersDataSource.swift */; };
+		3A5C12D61DE63F41000276E0 /* PostersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12C81DE63F41000276E0 /* PostersRepository.swift */; };
 		3A5C12D71DE63F41000276E0 /* GetSpacePosters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12CA1DE63F41000276E0 /* GetSpacePosters.swift */; };
-		3A5C12DC1DE63F41000276E0 /* SPCPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12D01DE63F41000276E0 /* SPCPresenter.swift */; };
-		3A5C12DE1DE63F41000276E0 /* SPCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12D21DE63F41000276E0 /* SPCView.swift */; };
-		3A5C12DF1DE63F41000276E0 /* SPCRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12D31DE63F41000276E0 /* SPCRouter.swift */; };
-		3A5C12E41DE65001000276E0 /* SPCVerticalPosterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12E11DE65001000276E0 /* SPCVerticalPosterCell.swift */; };
-		3A5C12E51DE65001000276E0 /* SPCPosterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12E21DE65001000276E0 /* SPCPosterDetailViewController.swift */; };
-		3A5C12E61DE65001000276E0 /* SPCPosterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12E31DE65001000276E0 /* SPCPosterInfoViewController.swift */; };
+		3A5C12DC1DE63F41000276E0 /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12D01DE63F41000276E0 /* ListPresenter.swift */; };
+		3A5C12DE1DE63F41000276E0 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12D21DE63F41000276E0 /* ListView.swift */; };
+		3A5C12DF1DE63F41000276E0 /* ListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12D31DE63F41000276E0 /* ListRouter.swift */; };
+		3A5C12E41DE65001000276E0 /* VerticalPosterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12E11DE65001000276E0 /* VerticalPosterCell.swift */; };
+		3A5C12E51DE65001000276E0 /* PosterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12E21DE65001000276E0 /* PosterDetailViewController.swift */; };
+		3A5C12E61DE65001000276E0 /* PosterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12E31DE65001000276E0 /* PosterInfoViewController.swift */; };
 		3A5C12EA1DE652F7000276E0 /* CollectionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12E91DE652F7000276E0 /* CollectionProtocols.swift */; };
 		3A5C12EE1DE77305000276E0 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12ED1DE77305000276E0 /* Reusable.swift */; };
 		3A83B6731DE5060400F2382B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A83B6721DE5060400F2382B /* Localizable.strings */; };
-		3AE0DBAE1DE9CD040048D5B7 /* SPCPosterCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE0DBAD1DE9CD040048D5B7 /* SPCPosterCellViewModel.swift */; };
+		3AE0DBAE1DE9CD040048D5B7 /* PosterCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE0DBAD1DE9CD040048D5B7 /* PosterCellViewModel.swift */; };
+		3AE0DBB01DE9DE2A0048D5B7 /* Poster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE0DBAF1DE9DE2A0048D5B7 /* Poster.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,19 +38,20 @@
 		3A59AEF01DE50355002CE5BE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A5C12BC1DE62428000276E0 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		3A5C12C21DE63259000276E0 /* AppAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
-		3A5C12C71DE63F41000276E0 /* SPCDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPCDataSource.swift; sourceTree = "<group>"; };
-		3A5C12C81DE63F41000276E0 /* SPCRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPCRepository.swift; sourceTree = "<group>"; };
+		3A5C12C71DE63F41000276E0 /* PostersDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostersDataSource.swift; sourceTree = "<group>"; };
+		3A5C12C81DE63F41000276E0 /* PostersRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostersRepository.swift; sourceTree = "<group>"; };
 		3A5C12CA1DE63F41000276E0 /* GetSpacePosters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetSpacePosters.swift; sourceTree = "<group>"; };
-		3A5C12D01DE63F41000276E0 /* SPCPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPCPresenter.swift; sourceTree = "<group>"; };
-		3A5C12D21DE63F41000276E0 /* SPCView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPCView.swift; sourceTree = "<group>"; };
-		3A5C12D31DE63F41000276E0 /* SPCRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPCRouter.swift; sourceTree = "<group>"; };
-		3A5C12E11DE65001000276E0 /* SPCVerticalPosterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPCVerticalPosterCell.swift; sourceTree = "<group>"; };
-		3A5C12E21DE65001000276E0 /* SPCPosterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPCPosterDetailViewController.swift; sourceTree = "<group>"; };
-		3A5C12E31DE65001000276E0 /* SPCPosterInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPCPosterInfoViewController.swift; sourceTree = "<group>"; };
+		3A5C12D01DE63F41000276E0 /* ListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
+		3A5C12D21DE63F41000276E0 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		3A5C12D31DE63F41000276E0 /* ListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRouter.swift; sourceTree = "<group>"; };
+		3A5C12E11DE65001000276E0 /* VerticalPosterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalPosterCell.swift; sourceTree = "<group>"; };
+		3A5C12E21DE65001000276E0 /* PosterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosterDetailViewController.swift; sourceTree = "<group>"; };
+		3A5C12E31DE65001000276E0 /* PosterInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosterInfoViewController.swift; sourceTree = "<group>"; };
 		3A5C12E91DE652F7000276E0 /* CollectionProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionProtocols.swift; sourceTree = "<group>"; };
 		3A5C12ED1DE77305000276E0 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
-		3A83B6721DE5060400F2382B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		3AE0DBAD1DE9CD040048D5B7 /* SPCPosterCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPCPosterCellViewModel.swift; sourceTree = "<group>"; };
+		3A83B6721DE5060400F2382B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3AE0DBAD1DE9CD040048D5B7 /* PosterCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosterCellViewModel.swift; sourceTree = "<group>"; };
+		3AE0DBAF1DE9DE2A0048D5B7 /* Poster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Poster.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +126,7 @@
 		3A5C12C41DE63F41000276E0 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				3A5C12D31DE63F41000276E0 /* SPCRouter.swift */,
+				3A5C12D31DE63F41000276E0 /* ListRouter.swift */,
 				3A5C12C51DE63F41000276E0 /* Data */,
 				3A5C12C91DE63F41000276E0 /* Domain */,
 				3A5C12CB1DE63F41000276E0 /* Presentation */,
@@ -135,8 +137,9 @@
 		3A5C12C51DE63F41000276E0 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				3A5C12C71DE63F41000276E0 /* SPCDataSource.swift */,
-				3A5C12C81DE63F41000276E0 /* SPCRepository.swift */,
+				3AE0DBAF1DE9DE2A0048D5B7 /* Poster.swift */,
+				3A5C12C71DE63F41000276E0 /* PostersDataSource.swift */,
+				3A5C12C81DE63F41000276E0 /* PostersRepository.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -152,9 +155,9 @@
 		3A5C12CB1DE63F41000276E0 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				3AE0DBAD1DE9CD040048D5B7 /* SPCPosterCellViewModel.swift */,
-				3A5C12D01DE63F41000276E0 /* SPCPresenter.swift */,
-				3A5C12D21DE63F41000276E0 /* SPCView.swift */,
+				3A5C12D01DE63F41000276E0 /* ListPresenter.swift */,
+				3A5C12D21DE63F41000276E0 /* ListView.swift */,
+				3AE0DBAD1DE9CD040048D5B7 /* PosterCellViewModel.swift */,
 				3A5C12E01DE65001000276E0 /* Visuals */,
 			);
 			path = Presentation;
@@ -163,9 +166,9 @@
 		3A5C12E01DE65001000276E0 /* Visuals */ = {
 			isa = PBXGroup;
 			children = (
-				3A5C12E11DE65001000276E0 /* SPCVerticalPosterCell.swift */,
-				3A5C12E21DE65001000276E0 /* SPCPosterDetailViewController.swift */,
-				3A5C12E31DE65001000276E0 /* SPCPosterInfoViewController.swift */,
+				3A5C12E21DE65001000276E0 /* PosterDetailViewController.swift */,
+				3A5C12E31DE65001000276E0 /* PosterInfoViewController.swift */,
+				3A5C12E11DE65001000276E0 /* VerticalPosterCell.swift */,
 			);
 			path = Visuals;
 			sourceTree = "<group>";
@@ -243,22 +246,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A5C12DC1DE63F41000276E0 /* SPCPresenter.swift in Sources */,
-				3A5C12DE1DE63F41000276E0 /* SPCView.swift in Sources */,
+				3A5C12DC1DE63F41000276E0 /* ListPresenter.swift in Sources */,
+				3A5C12DE1DE63F41000276E0 /* ListView.swift in Sources */,
 				3A5C12C31DE63259000276E0 /* AppAppearance.swift in Sources */,
-				3A5C12DF1DE63F41000276E0 /* SPCRouter.swift in Sources */,
-				3A5C12E61DE65001000276E0 /* SPCPosterInfoViewController.swift in Sources */,
-				3A5C12E41DE65001000276E0 /* SPCVerticalPosterCell.swift in Sources */,
-				3AE0DBAE1DE9CD040048D5B7 /* SPCPosterCellViewModel.swift in Sources */,
+				3A5C12DF1DE63F41000276E0 /* ListRouter.swift in Sources */,
+				3A5C12E61DE65001000276E0 /* PosterInfoViewController.swift in Sources */,
+				3A5C12E41DE65001000276E0 /* VerticalPosterCell.swift in Sources */,
+				3AE0DBAE1DE9CD040048D5B7 /* PosterCellViewModel.swift in Sources */,
 				3A59AEC01DE4D4ED002CE5BE /* AppDelegate.swift in Sources */,
-				3A5C12D61DE63F41000276E0 /* SPCRepository.swift in Sources */,
+				3A5C12D61DE63F41000276E0 /* PostersRepository.swift in Sources */,
 				3A59AEEF1DE4D5F6002CE5BE /* ModuleFactory.swift in Sources */,
+				3AE0DBB01DE9DE2A0048D5B7 /* Poster.swift in Sources */,
 				3A5C12BD1DE62428000276E0 /* MainRouter.swift in Sources */,
 				3A5C12EA1DE652F7000276E0 /* CollectionProtocols.swift in Sources */,
-				3A5C12E51DE65001000276E0 /* SPCPosterDetailViewController.swift in Sources */,
+				3A5C12E51DE65001000276E0 /* PosterDetailViewController.swift in Sources */,
 				3A5C12EE1DE77305000276E0 /* Reusable.swift in Sources */,
 				3A5C12D71DE63F41000276E0 /* GetSpacePosters.swift in Sources */,
-				3A5C12D51DE63F41000276E0 /* SPCDataSource.swift in Sources */,
+				3A5C12D51DE63F41000276E0 /* PostersDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

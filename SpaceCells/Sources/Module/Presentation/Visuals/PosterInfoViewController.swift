@@ -1,7 +1,7 @@
 
 import UIKit
 
-class SPCPosterInfoViewController: UIAlertController {
+class PosterInfoViewController: UIAlertController {
 
     override var preferredStyle: UIAlertControllerStyle {
         return .alert

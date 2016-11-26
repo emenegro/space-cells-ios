@@ -1,7 +1,7 @@
 
 import UIKit
 
-class SPCPosterDetailViewController: UIViewController {
+class PosterDetailViewController: UIViewController {
     
     let imageName: String
     var infoWebButtonSelectionBlock: (() -> Void)?
@@ -42,14 +42,14 @@ class SPCPosterDetailViewController: UIViewController {
     }
 }
 
-extension SPCPosterDetailViewController {
+extension PosterDetailViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         edgesForExtendedLayout = UIRectEdge(rawValue: 0)
         view.backgroundColor = AppColors.backgroundSecondary
         
-        infoWebButton.addTarget(self, action: #selector(SPCPosterDetailViewController.infoWebButtonTouchedUpInside), for: .touchUpInside)
+        infoWebButton.addTarget(self, action: #selector(PosterDetailViewController.infoWebButtonTouchedUpInside), for: .touchUpInside)
         posterImageView.image = UIImage(named: imageName)
     }
     

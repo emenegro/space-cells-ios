@@ -1,7 +1,7 @@
 
 import UIKit
 
-class SPCRouter {
+class ListRouter {
     
     let mainRouter: MainRouter
     
@@ -11,7 +11,7 @@ class SPCRouter {
     
     func navigateToDetail(title: String, imageName: String) {
         
-        let detailViewController = SPCPosterDetailViewController(title: title, imageName: imageName)
+        let detailViewController = PosterDetailViewController(title: title, imageName: imageName)
         detailViewController.infoWebButtonSelectionBlock = {
             self.mainRouter.openAppIfPossible(intent: "http://www.jpl.nasa.gov/visions-of-the-future/about.php")
         }
@@ -20,21 +20,21 @@ class SPCRouter {
     }
     
     func showInfo(title: String, message: String) {
-        let infoViewController = SPCPosterInfoViewController(title: title, message: message)
+        let infoViewController = PosterInfoViewController(title: title, message: message)
         mainRouter.present(viewController: infoViewController, animated: true, completion: nil)
     }
 }
 
-extension SPCRouter: ModuleFactory {
+extension ListRouter: ModuleFactory {
     
     static func create(withMainRouter mainRouter: MainRouter) -> UIViewController {
         
-        let localDataSource = SPCLocalDataSourceImpl()
-        let repository = SPCRepositoryImpl(localDataSource: localDataSource)
+        let localDataSource = PostersLocalDataSourceImpl()
+        let repository = PostersRepositoryImpl(localDataSource: localDataSource)
         let interactor = GetSpacePostersImpl(repository: repository)
-        let router = SPCRouter(mainRouter: mainRouter)
-        let presenter = SPCPresenterImpl(interactor: interactor, router: router)
-        let view = SPCViewController(presenter: presenter, tableViewDataSource: presenter, tableViewDelegate: presenter)
+        let router = ListRouter(mainRouter: mainRouter)
+        let presenter = ListPresenterImpl(interactor: interactor, router: router)
+        let view = ListViewController(presenter: presenter, tableViewDataSource: presenter, tableViewDelegate: presenter)
         
         repository.output = interactor
         interactor.output = presenter

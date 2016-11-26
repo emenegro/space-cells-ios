@@ -1,31 +1,31 @@
 
 import UIKit
 
-protocol SPCPresenter {
+protocol ListPresenter {
     var title: String { get }
     func viewWillAppear()
 }
 
-class SPCPresenterImpl {
+class ListPresenterImpl {
     
     let interactor: GetSpacePosters
-    let router: SPCRouter
-    weak var view: SPCView?
-    var posters: [SPCPoster] = []
-    var viewModels: [SPCPosterCellViewModel] = []
+    let router: ListRouter
+    weak var view: ListView?
+    var posters: [Poster] = []
+    var viewModels: [PosterCellViewModel] = []
     
-    init(interactor: GetSpacePosters, router: SPCRouter) {
+    init(interactor: GetSpacePosters, router: ListRouter) {
         self.interactor = interactor
         self.router = router
     }
     
     fileprivate func populateViewModels() {
         
-        var viewModels: [SPCPosterCellViewModel] = []
+        var viewModels: [PosterCellViewModel] = []
         
         for poster in posters {
             
-            let viewModel = SPCPosterCellViewModel(
+            let viewModel = PosterCellViewModel(
                 title: poster.title,
                 subtitle: poster.subtitle,
                 imageName: poster.imageName,
@@ -41,7 +41,7 @@ class SPCPresenterImpl {
     }
 }
 
-extension SPCPresenterImpl: SPCPresenter {
+extension ListPresenterImpl: ListPresenter {
     
     var title: String {
         return NSLocalizedString("txt_app_name", comment: "")
@@ -52,7 +52,7 @@ extension SPCPresenterImpl: SPCPresenter {
     }
 }
 
-extension SPCPresenterImpl: CollectionDataSource {
+extension ListPresenterImpl: CollectionDataSource {
     
     var numberOfSections: Int {
         return 1
@@ -67,7 +67,7 @@ extension SPCPresenterImpl: CollectionDataSource {
     }
 }
 
-extension SPCPresenterImpl: CollectionDelegate {
+extension ListPresenterImpl: CollectionDelegate {
     
     func rowSelectedAtIndexPath(indexPath: IndexPath) {
         let poster = posters[indexPath.row]
@@ -75,9 +75,9 @@ extension SPCPresenterImpl: CollectionDelegate {
     }
 }
 
-extension SPCPresenterImpl: GetSpacePostersOutput {
+extension ListPresenterImpl: GetSpacePostersOutput {
     
-    func onPosters(posters: [SPCPoster]) {
+    func onPosters(posters: [Poster]) {
         self.posters = posters
         populateViewModels()
         view?.reloadData()

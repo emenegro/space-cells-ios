@@ -6,15 +6,15 @@ protocol GetSpacePosters {
 }
 
 protocol GetSpacePostersOutput: class {
-    func onPosters(posters: [SPCPoster])
+    func onPosters(posters: [Poster])
 }
 
 class GetSpacePostersImpl {
     
-    let repository: SPCRepository
+    let repository: PostersRepository
     weak var output: GetSpacePostersOutput?
     
-    init(repository: SPCRepository) {
+    init(repository: PostersRepository) {
         self.repository = repository
     }
 }
@@ -26,9 +26,9 @@ extension GetSpacePostersImpl: GetSpacePosters {
     }
 }
 
-extension GetSpacePostersImpl: SPCRepositoryOutput {
+extension GetSpacePostersImpl: PostersRepositoryOutput {
     
-    func onPosters(posters: [SPCPoster]) {
+    func onPosters(posters: [Poster]) {
         output?.onPosters(posters: posters)
     }
 }

@@ -1,13 +1,13 @@
 
 import UIKit
 
-protocol SPCView: class {
+protocol ListView: class {
     func reloadData()
 }
 
-class SPCViewController: UIViewController {
+class ListViewController: UIViewController {
     
-    let presenter: SPCPresenter
+    let presenter: ListPresenter
     let tableViewDataSource: CollectionDataSource
     let tableViewDelegate: CollectionDelegate
     
@@ -20,11 +20,11 @@ class SPCViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
         tableView.separatorStyle = .none
-        tableView.register(SPCVerticalPosterCell.self)
+        tableView.register(VerticalPosterCell.self)
         return tableView
     }()
     
-    init(presenter: SPCPresenter, tableViewDataSource: CollectionDataSource, tableViewDelegate: CollectionDelegate) {
+    init(presenter: ListPresenter, tableViewDataSource: CollectionDataSource, tableViewDelegate: CollectionDelegate) {
         self.presenter = presenter
         self.tableViewDataSource = tableViewDataSource
         self.tableViewDelegate = tableViewDelegate
@@ -36,7 +36,7 @@ class SPCViewController: UIViewController {
     }
 }
 
-extension SPCViewController {
+extension ListViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -57,7 +57,7 @@ extension SPCViewController {
     }
 }
 
-extension SPCViewController: UITableViewDataSource {
+extension ListViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return tableViewDataSource.numberOfSections
@@ -69,15 +69,15 @@ extension SPCViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let viewModel: SPCPosterCellViewModel? = tableViewDataSource.viewModelForRowAtIndexPath(indexPath: indexPath)
-        let cell: SPCVerticalPosterCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+        let viewModel: PosterCellViewModel? = tableViewDataSource.viewModelForRowAtIndexPath(indexPath: indexPath)
+        let cell: VerticalPosterCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         cell.configure(viewModel: viewModel)
         
         return cell
     }
 }
 
-extension SPCViewController: UITableViewDelegate {
+extension ListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -85,7 +85,7 @@ extension SPCViewController: UITableViewDelegate {
     }
 }
 
-extension SPCViewController: SPCView {
+extension ListViewController: ListView {
     
     func reloadData() {
         tableView.reloadData()
