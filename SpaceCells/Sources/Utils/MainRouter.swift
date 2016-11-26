@@ -11,6 +11,7 @@ import UIKit
 protocol MainRouter {
     func show(viewController: UIViewController, sender: Any?)
     func present(viewController: UIViewController, animated: Bool, completion:(() -> Void)?)
+    func openAppIfPossible(intent: String)
 }
 
 class MainRouterImpl {
@@ -33,5 +34,18 @@ extension MainRouterImpl: MainRouter {
     
     func present(viewController: UIViewController, animated: Bool, completion:(() -> Void)?) {
         rootViewController?.present(viewController, animated: animated, completion: completion)
+    }
+    
+    func openAppIfPossible(intent: String) {
+        
+        guard let url = URL(string: intent) else {
+            return
+        }
+        
+        guard UIApplication.shared.canOpenURL(url) else {
+            return
+        }
+        
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 }

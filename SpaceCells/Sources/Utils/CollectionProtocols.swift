@@ -20,5 +20,5 @@ protocol CollectionDelegate {
 
 protocol CollectionViewModelConfigurable {
     associatedtype ViewModelType
-    func configure(viewModel: ViewModelType)
+    func configure(viewModel: ViewModelType?)
 }

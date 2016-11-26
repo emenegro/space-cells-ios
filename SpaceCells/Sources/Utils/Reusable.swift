@@ -5,7 +5,7 @@
 //  Created by Mario on 24/11/16.
 //  Copyright © 2016 Mario Negro. All rights reserved.
 //
-//  By on Guille González, adapted to Swift 3
+//  By Guille González, adapted to Swift 3
 //  https://medium.com/@gonzalezreal/ios-cell-registration-reusing-with-swift-protocol-extensions-and-generics-c5ac4fb5b75e#.mxlpvb6h0
 //
 

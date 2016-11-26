@@ -50,7 +50,7 @@ class SPCPosterCell: UITableViewCell {
         let label = UILabel(frame: CGRect.zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = AppColors.tint
+        label.textColor = AppColors.foreground
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         self.addSubview(label)
@@ -85,16 +85,30 @@ class SPCPosterCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func prepareForReuse() {
+        configure(viewModel: nil)
+    }
 }
 
 extension SPCPosterCell: CollectionViewModelConfigurable {
 
     typealias ViewModelType = SPCPosterCellViewModel
     
-    func configure(viewModel: ViewModelType) {
+    func configure(viewModel: ViewModelType?) {
         self.viewModel = viewModel
-        posterImageView.image = UIImage(named: viewModel.imageName)
-        titleLabel.text = viewModel.title
-        subtitleLabel.text = viewModel.subtitle
+        titleLabel.text = viewModel?.title
+        subtitleLabel.text = viewModel?.subtitle
+        configureImage(imageName: viewModel?.imageName)
+    }
+    
+    private func configureImage(imageName: String?) {
+        if let name = imageName {
+            DispatchQueue.main.async(execute: {
+                self.posterImageView.image = UIImage(named: name)
+            })
+        } else {
+            posterImageView.image = nil
+        }
     }
 }

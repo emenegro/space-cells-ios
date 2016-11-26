@@ -17,7 +17,12 @@ class SPCRouter {
     }
     
     func navigateToDetail(title: String, imageName: String) {
+        
         let detailViewController = SPCPosterDetailViewController(title: title, imageName: imageName)
+        detailViewController.infoWebButtonSelectionBlock = {
+            self.mainRouter.openAppIfPossible(intent: "http://www.jpl.nasa.gov/visions-of-the-future/about.php")
+        }
+        
         mainRouter.show(viewController: detailViewController, sender: self)
     }
     
@@ -29,7 +34,7 @@ class SPCRouter {
 
 extension SPCRouter: ModuleFactory {
     
-    static func create(mainRouter: MainRouter) -> UIViewController {
+    static func create(withMainRouter mainRouter: MainRouter) -> UIViewController {
         
         let localDataSource = SPCLocalDataSourceImpl()
         let repository = SPCRepositoryImpl(localDataSource: localDataSource)

@@ -20,11 +20,9 @@ extension SPCViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let viewModel: SPCPosterCellViewModel? = tableViewDataSource.viewModelForRowAtIndexPath(indexPath: indexPath)
         let cell: SPCPosterCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-        
-        if let viewModel: SPCPosterCellViewModel = tableViewDataSource.viewModelForRowAtIndexPath(indexPath: indexPath) {
-            cell.configure(viewModel: viewModel)
-        }
+        cell.configure(viewModel: viewModel)
         
         return cell
     }
