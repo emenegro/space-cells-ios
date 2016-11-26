@@ -22,7 +22,7 @@ This app is composed of three views:
 - PR and comments are welcomed!
 
 ## Acknowledgements
-- Application icon from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Creative-Tail-rocket.svg).
+- Application icon from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File%3ACreative-Tail-rocket.svg).
 - Posters from [JPL Visions of the Future](http://www.jpl.nasa.gov/visions-of-the-future/).
 - This apps uses ['Reusable' extensions](https://medium.com/@gonzalezreal/ios-cell-registration-reusing-with-swift-protocol-extensions-and-generics-c5ac4fb5b75e#.mxlpvb6h0) by Guille González (adapted to Swift 3).
 
