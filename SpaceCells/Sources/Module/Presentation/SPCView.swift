@@ -1,10 +1,3 @@
-//
-//  SPCView.swift
-//  SpaceCells
-//
-//  Created by Mario on 3/11/16.
-//  Copyright © 2016 Mario Negro. All rights reserved.
-//
 
 import UIKit
 
@@ -27,7 +20,7 @@ class SPCViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
         tableView.separatorStyle = .none
-        tableView.register(SPCPosterCell.self)
+        tableView.register(SPCVerticalPosterCell.self)
         return tableView
     }()
     
@@ -61,6 +54,34 @@ extension SPCViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter.viewWillAppear()
+    }
+}
+
+extension SPCViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return tableViewDataSource.numberOfSections
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tableViewDataSource.numberOfRows
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let viewModel: SPCPosterCellViewModel? = tableViewDataSource.viewModelForRowAtIndexPath(indexPath: indexPath)
+        let cell: SPCVerticalPosterCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+        cell.configure(viewModel: viewModel)
+        
+        return cell
+    }
+}
+
+extension SPCViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        tableViewDelegate.rowSelectedAtIndexPath(indexPath: indexPath)
     }
 }
 

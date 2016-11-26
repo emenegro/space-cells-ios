@@ -1,10 +1,3 @@
-//
-//  SPCRouter.swift
-//  SpaceCells
-//
-//  Created by Mario on 3/11/16.
-//  Copyright © 2016 Mario Negro. All rights reserved.
-//
 
 import UIKit
 

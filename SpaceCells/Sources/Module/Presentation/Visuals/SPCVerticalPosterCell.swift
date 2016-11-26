@@ -1,22 +1,7 @@
-//
-//  SPCPosterCell.swift
-//  SpaceCells
-//
-//  Created by Mario on 21/11/16.
-//  Copyright © 2016 Mario Negro. All rights reserved.
-//
 
 import UIKit
 
-typealias SPCPosterCellViewModelInfoSelectionBlock = () -> Void
-struct SPCPosterCellViewModel {
-    let title: String
-    let subtitle: String
-    let imageName: String
-    let infoButtonSelectionBlock: SPCPosterCellViewModelInfoSelectionBlock
-}
-
-class SPCPosterCell: UITableViewCell {
+class SPCVerticalPosterCell: UITableViewCell {
 
     static let cellFixedHeight: CGFloat = 200
     fileprivate var viewModel: SPCPosterCellViewModel!
@@ -70,13 +55,9 @@ class SPCPosterCell: UITableViewCell {
         return button
     }()
     
-    @objc func infoButtonTouchedUpInside() {
-        viewModel.infoButtonSelectionBlock()
-    }
-    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
-        button.addTarget(self, action: #selector(SPCPosterCell.infoButtonTouchedUpInside), for: .touchUpInside)
+        button.addTarget(self, action: #selector(SPCVerticalPosterCell.infoButtonTouchedUpInside), for: .touchUpInside)
         backgroundColor = AppColors.background
         tintColor = AppColors.tint
         selectionStyle = .none
@@ -85,13 +66,20 @@ class SPCPosterCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+extension SPCVerticalPosterCell {
     
     override func prepareForReuse() {
         configure(viewModel: nil)
     }
+    
+    @objc func infoButtonTouchedUpInside() {
+        viewModel.infoButtonSelectionBlock()
+    }
 }
 
-extension SPCPosterCell: CollectionViewModelConfigurable {
+extension SPCVerticalPosterCell: CollectionViewModelConfigurable {
 
     typealias ViewModelType = SPCPosterCellViewModel
     
