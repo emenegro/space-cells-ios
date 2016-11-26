@@ -8,9 +8,8 @@
 
 import UIKit
 
-typealias SPCPosterCellViewModelInfoSelectionBlock = (_ index: Int) -> Void
+typealias SPCPosterCellViewModelInfoSelectionBlock = () -> Void
 struct SPCPosterCellViewModel {
-    let index: Int
     let title: String
     let subtitle: String
     let imageName: String
@@ -41,8 +40,8 @@ class SPCPosterCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 26)
         label.textColor = AppColors.foreground
         self.addSubview(label)
-        label.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10).isActive = true
         label.topAnchor.constraint(equalTo: self.posterImageView.bottomAnchor, constant: 5).isActive = true
+        label.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10).isActive = true
         label.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10).isActive = true
         return label
     }()
@@ -51,13 +50,14 @@ class SPCPosterCell: UITableViewCell {
         let label = UILabel(frame: CGRect.zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = AppColors.secondary
+        label.textColor = AppColors.tint
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         self.addSubview(label)
         label.leftAnchor.constraint(equalTo: self.titleLabel.leftAnchor).isActive = true
         label.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor).isActive = true
         label.rightAnchor.constraint(equalTo: self.titleLabel.rightAnchor, constant: -50).isActive = true
+        label.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10).isActive = true
         return label
     }()
     
@@ -71,7 +71,19 @@ class SPCPosterCell: UITableViewCell {
     }()
     
     @objc func infoButtonTouchedUpInside() {
-        viewModel.infoButtonSelectionBlock(viewModel.index)
+        viewModel.infoButtonSelectionBlock()
+    }
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: .default, reuseIdentifier: reuseIdentifier)
+        button.addTarget(self, action: #selector(SPCPosterCell.infoButtonTouchedUpInside), for: .touchUpInside)
+        backgroundColor = AppColors.background
+        tintColor = AppColors.tint
+        selectionStyle = .none
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
@@ -84,6 +96,5 @@ extension SPCPosterCell: CollectionViewModelConfigurable {
         posterImageView.image = UIImage(named: viewModel.imageName)
         titleLabel.text = viewModel.title
         subtitleLabel.text = viewModel.subtitle
-        button.addTarget(self, action: #selector(SPCPosterCell.infoButtonTouchedUpInside), for: .touchUpInside)
     }
 }

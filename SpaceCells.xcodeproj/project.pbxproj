@@ -12,7 +12,7 @@
 		3A59AECA1DE4D4ED002CE5BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A59AEC81DE4D4ED002CE5BE /* LaunchScreen.storyboard */; };
 		3A59AEEF1DE4D5F6002CE5BE /* ModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A59AEE41DE4D5F6002CE5BE /* ModuleFactory.swift */; };
 		3A5C12BD1DE62428000276E0 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12BC1DE62428000276E0 /* MainRouter.swift */; };
-		3A5C12C31DE63259000276E0 /* VisualConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12C21DE63259000276E0 /* VisualConstants.swift */; };
+		3A5C12C31DE63259000276E0 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12C21DE63259000276E0 /* AppAppearance.swift */; };
 		3A5C12D41DE63F41000276E0 /* SPCPoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12C61DE63F41000276E0 /* SPCPoster.swift */; };
 		3A5C12D51DE63F41000276E0 /* SPCDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12C71DE63F41000276E0 /* SPCDataSource.swift */; };
 		3A5C12D61DE63F41000276E0 /* SPCRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12C81DE63F41000276E0 /* SPCRepository.swift */; };
@@ -38,7 +38,7 @@
 		3A59AEE41DE4D5F6002CE5BE /* ModuleFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleFactory.swift; sourceTree = "<group>"; };
 		3A59AEF01DE50355002CE5BE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A5C12BC1DE62428000276E0 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
-		3A5C12C21DE63259000276E0 /* VisualConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualConstants.swift; sourceTree = "<group>"; };
+		3A5C12C21DE63259000276E0 /* AppAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
 		3A5C12C61DE63F41000276E0 /* SPCPoster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPCPoster.swift; sourceTree = "<group>"; };
 		3A5C12C71DE63F41000276E0 /* SPCDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPCDataSource.swift; sourceTree = "<group>"; };
 		3A5C12C81DE63F41000276E0 /* SPCRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPCRepository.swift; sourceTree = "<group>"; };
@@ -116,11 +116,11 @@
 		3A59AEE31DE4D5F6002CE5BE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3A5C12C21DE63259000276E0 /* AppAppearance.swift */,
 				3A5C12E91DE652F7000276E0 /* CollectionProtocols.swift */,
 				3A5C12BC1DE62428000276E0 /* MainRouter.swift */,
 				3A59AEE41DE4D5F6002CE5BE /* ModuleFactory.swift */,
 				3A5C12ED1DE77305000276E0 /* Reusable.swift */,
-				3A5C12C21DE63259000276E0 /* VisualConstants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -251,7 +251,7 @@
 			files = (
 				3A5C12DC1DE63F41000276E0 /* SPCPresenter.swift in Sources */,
 				3A5C12DE1DE63F41000276E0 /* SPCView.swift in Sources */,
-				3A5C12C31DE63259000276E0 /* VisualConstants.swift in Sources */,
+				3A5C12C31DE63259000276E0 /* AppAppearance.swift in Sources */,
 				3A5C12DF1DE63F41000276E0 /* SPCRouter.swift in Sources */,
 				3A5C12E61DE65001000276E0 /* SPCPosterInfoViewController.swift in Sources */,
 				3A5C12E41DE65001000276E0 /* SPCPosterCell.swift in Sources */,

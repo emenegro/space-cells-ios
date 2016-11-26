@@ -21,9 +21,11 @@ class SPCViewController: UIViewController {
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.backgroundColor = AppColors.backgroundSecondary
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.rowHeight = SPCPosterCell.cellFixedHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100
         tableView.separatorStyle = .none
         tableView.register(SPCPosterCell.self)
         return tableView
@@ -46,7 +48,7 @@ extension SPCViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
         edgesForExtendedLayout = UIRectEdge(rawValue: 0)
-        view.backgroundColor = AppColors.background
+        view.backgroundColor = AppColors.backgroundSecondary
         title = presenter.title
         
 		view.addSubview(tableView)

@@ -29,7 +29,7 @@ extension SPCPosterDetailViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         edgesForExtendedLayout = UIRectEdge(rawValue: 0)
-        view.backgroundColor = AppColors.background
+        view.backgroundColor = AppColors.backgroundSecondary
         
         posterImageView = UIImageView(frame: CGRect.zero)
         posterImageView.translatesAutoresizingMaskIntoConstraints = false

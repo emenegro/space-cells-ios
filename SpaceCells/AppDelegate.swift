@@ -21,11 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController(rootViewController: rootViewController)
         
         window.rootViewController = navigationController
-        window.backgroundColor = AppColors.background
-        window.tintColor = AppColors.foreground
         window.makeKeyAndVisible()
         
         self.window = window
+
+        AppAppearance.apply(window)
         
         return true
     }

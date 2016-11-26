@@ -30,20 +30,15 @@ class SPCPresenterImpl {
         
         var viewModels: [SPCPosterCellViewModel] = []
         
-        for (index, poster) in posters.enumerated() {
-            
-            let selectionBlock: SPCPosterCellViewModelInfoSelectionBlock = { [weak self] index in
-                if let poster = self?.posters[index] {
-                    self?.router.showInfo(title: poster.title, message: poster.description)
-                }
-            }
+        for poster in posters {
             
             let viewModel = SPCPosterCellViewModel(
-                index: index,
                 title: poster.title,
                 subtitle: poster.subtitle,
                 imageName: poster.imageName,
-                infoButtonSelectionBlock: selectionBlock
+                infoButtonSelectionBlock: { [weak self] in
+                    self?.router.showInfo(title: poster.title, message: poster.description)
+                }
             )
             
             viewModels.append(viewModel)
