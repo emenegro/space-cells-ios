@@ -4,22 +4,22 @@
 
 Exercising collection view **loading**, **configuration** and **interaction** on iOS VIPER architecture.
 
-The motivation is to explore the implementation of a mechanism that allows the interaction with components inside cells without involving the view.
+The motivation is to explore the implementation of a mechanism tho allow the interaction with components inside cells without involving the view.
 
 ## Example app
 This app is composed of three views:
 
 - The main view showing a list of space posters.
-- An information view shown when tapping `Info` button.
+- An information view shown when tapping information button.
 - A detail view that shows the whole poster when tapping the cell.
 
 
 ![List](etc/list.png) ![Info](etc/info.png) ![Detail](etc/detail.png)
 
 ## Todo
-- *Allow loading of multiple cell types.*
+- **Allow loading of multiple cell types.**
 - UI testing.
-- PR and comments are welcomed!
+- Pull requests and comments are welcomed!
 
 ## Acknowledgements
 - Application icon from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File%3ACreative-Tail-rocket.svg).
@@ -27,4 +27,4 @@ This app is composed of three views:
 - This apps uses ['Reusable' extensions](https://medium.com/@gonzalezreal/ios-cell-registration-reusing-with-swift-protocol-extensions-and-generics-c5ac4fb5b75e#.mxlpvb6h0) by Guille González (adapted to Swift 3).
 
 ## License
-This library is licensed under the [MIT License](LICENSE).
+This code is licensed under the [MIT License](LICENSE).

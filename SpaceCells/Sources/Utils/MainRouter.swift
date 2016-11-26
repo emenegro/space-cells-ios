@@ -10,8 +10,13 @@ protocol MainRouter {
 class MainRouterImpl {
     
     let window: UIWindow
-    var rootViewController: UIViewController? {
-        return window.rootViewController
+    
+    var rootViewController: UIViewController {
+        guard let rootViewController = window.rootViewController else {
+            fatalError("There is no root view controller installed on the window")
+        }
+        
+        return rootViewController
     }
     
     init(window: UIWindow) {
@@ -22,11 +27,11 @@ class MainRouterImpl {
 extension MainRouterImpl: MainRouter {
     
     func show(viewController: UIViewController, sender: Any?) {
-        rootViewController?.show(viewController, sender: sender)
+        rootViewController.show(viewController, sender: sender)
     }
     
     func present(viewController: UIViewController, animated: Bool, completion:(() -> Void)?) {
-        rootViewController?.present(viewController, animated: animated, completion: completion)
+        rootViewController.present(viewController, animated: animated, completion: completion)
     }
     
     func openAppIfPossible(intent: String) {
