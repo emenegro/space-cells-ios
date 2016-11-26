@@ -16,7 +16,7 @@ This app is composed of three views:
 
 ![List](etc/list.png) ![Info](etc/info.png) ![Detail](etc/detail.png)
 
-## Todo
+## //TODO:
 - **Allow loading of multiple cell types.**
 - UI testing.
 - Pull requests and comments are welcomed!
