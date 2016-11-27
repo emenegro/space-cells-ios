@@ -13,8 +13,7 @@ This app is composed of three views:
 - An information view shown when tapping information button.
 - A detail view that shows the whole poster when tapping the cell.
 
-
-![List](etc/list.png) ![Info](etc/info.png) ![Detail](etc/detail.png)
+<img src="etc/list.png" width=280> <img src="etc/info.png" width=280> <img src="etc/detail.png" width=280>
 
 ## //TODO:
 - **Allow loading of multiple cell types.**
