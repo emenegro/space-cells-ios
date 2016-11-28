@@ -205,7 +205,7 @@
 				TargetAttributes = {
 					3A59AEBB1DE4D4ED002CE5BE = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 56GS2D3PJF;
+						DevelopmentTeam = 55X7Q8V35C;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -375,7 +375,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 56GS2D3PJF;
+				DEVELOPMENT_TEAM = 55X7Q8V35C;
 				INFOPLIST_FILE = SpaceCells/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.marionegro.SpaceCells;
@@ -388,7 +388,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 56GS2D3PJF;
+				DEVELOPMENT_TEAM = 55X7Q8V35C;
 				INFOPLIST_FILE = SpaceCells/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.marionegro.SpaceCells;

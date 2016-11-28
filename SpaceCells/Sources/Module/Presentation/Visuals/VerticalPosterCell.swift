@@ -93,7 +93,12 @@ extension VerticalPosterCell: CollectionViewModelConfigurable {
     private func configureImage(imageName: String?) {
         if let name = imageName {
             DispatchQueue.main.async(execute: {
-                self.posterImageView.image = UIImage(named: name)
+                let imageView = self.posterImageView
+                imageView.alpha = 0
+                imageView.image = UIImage(named: name)
+                UIView.animate(withDuration: 0.3, animations: {
+                    imageView.alpha = 1
+                })
             })
         } else {
             posterImageView.image = nil
