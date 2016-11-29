@@ -8,8 +8,7 @@ protocol ListView: class {
 class ListViewController: UIViewController {
     
     let presenter: ListPresenter
-    let tableViewDataSource: CollectionDataSource
-    let tableViewDelegate: CollectionDelegate
+    let tableViewCollectionable: AnyCollectionable<PosterCellViewModel>
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -24,10 +23,9 @@ class ListViewController: UIViewController {
         return tableView
     }()
     
-    init(presenter: ListPresenter, tableViewDataSource: CollectionDataSource, tableViewDelegate: CollectionDelegate) {
+    init(presenter: ListPresenter, tableViewCollectionable: AnyCollectionable<PosterCellViewModel>) {
         self.presenter = presenter
-        self.tableViewDataSource = tableViewDataSource
-        self.tableViewDelegate = tableViewDelegate
+        self.tableViewCollectionable = tableViewCollectionable
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -60,19 +58,17 @@ extension ListViewController {
 extension ListViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return tableViewDataSource.numberOfSections
+        return tableViewCollectionable.numberOfSections()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableViewDataSource.numberOfRows
+        return tableViewCollectionable.numberOfRows(inSection: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let viewModel: PosterCellViewModel? = tableViewDataSource.viewModelForRowAtIndexPath(indexPath: indexPath)
+        let viewModel: PosterCellViewModel? = tableViewCollectionable.viewModelForRowAtIndexPath(indexPath: indexPath)
         let cell: VerticalPosterCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         cell.configure(viewModel: viewModel)
-        
         return cell
     }
 }
@@ -81,7 +77,7 @@ extension ListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        tableViewDelegate.rowSelectedAtIndexPath(indexPath: indexPath)
+        tableViewCollectionable.rowSelectedAtIndexPath(indexPath: indexPath)
     }
 }
 

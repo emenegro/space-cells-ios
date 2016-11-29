@@ -79,7 +79,7 @@ extension VerticalPosterCell {
     }
 }
 
-extension VerticalPosterCell: CollectionViewModelConfigurable {
+extension VerticalPosterCell: CollectionableViewModelCellConfigurable {
 
     typealias ViewModelType = PosterCellViewModel
     

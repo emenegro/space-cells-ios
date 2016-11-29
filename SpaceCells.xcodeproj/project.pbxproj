@@ -22,7 +22,7 @@
 		3A5C12E41DE65001000276E0 /* VerticalPosterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12E11DE65001000276E0 /* VerticalPosterCell.swift */; };
 		3A5C12E51DE65001000276E0 /* PosterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12E21DE65001000276E0 /* PosterDetailViewController.swift */; };
 		3A5C12E61DE65001000276E0 /* PosterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12E31DE65001000276E0 /* PosterInfoViewController.swift */; };
-		3A5C12EA1DE652F7000276E0 /* CollectionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12E91DE652F7000276E0 /* CollectionProtocols.swift */; };
+		3A5C12EA1DE652F7000276E0 /* Collectionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12E91DE652F7000276E0 /* Collectionable.swift */; };
 		3A5C12EE1DE77305000276E0 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12ED1DE77305000276E0 /* Reusable.swift */; };
 		3A83B6731DE5060400F2382B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A83B6721DE5060400F2382B /* Localizable.strings */; };
 		3AE0DBAE1DE9CD040048D5B7 /* PosterCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE0DBAD1DE9CD040048D5B7 /* PosterCellViewModel.swift */; };
@@ -47,7 +47,7 @@
 		3A5C12E11DE65001000276E0 /* VerticalPosterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalPosterCell.swift; sourceTree = "<group>"; };
 		3A5C12E21DE65001000276E0 /* PosterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosterDetailViewController.swift; sourceTree = "<group>"; };
 		3A5C12E31DE65001000276E0 /* PosterInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosterInfoViewController.swift; sourceTree = "<group>"; };
-		3A5C12E91DE652F7000276E0 /* CollectionProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionProtocols.swift; sourceTree = "<group>"; };
+		3A5C12E91DE652F7000276E0 /* Collectionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collectionable.swift; sourceTree = "<group>"; };
 		3A5C12ED1DE77305000276E0 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		3A83B6721DE5060400F2382B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3AE0DBAD1DE9CD040048D5B7 /* PosterCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosterCellViewModel.swift; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				3A5C12C21DE63259000276E0 /* AppAppearance.swift */,
-				3A5C12E91DE652F7000276E0 /* CollectionProtocols.swift */,
+				3A5C12E91DE652F7000276E0 /* Collectionable.swift */,
 				3A5C12BC1DE62428000276E0 /* MainRouter.swift */,
 				3A59AEE41DE4D5F6002CE5BE /* ModuleFactory.swift */,
 				3A5C12ED1DE77305000276E0 /* Reusable.swift */,
@@ -205,7 +205,6 @@
 				TargetAttributes = {
 					3A59AEBB1DE4D4ED002CE5BE = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 55X7Q8V35C;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -258,7 +257,7 @@
 				3A59AEEF1DE4D5F6002CE5BE /* ModuleFactory.swift in Sources */,
 				3AE0DBB01DE9DE2A0048D5B7 /* Poster.swift in Sources */,
 				3A5C12BD1DE62428000276E0 /* MainRouter.swift in Sources */,
-				3A5C12EA1DE652F7000276E0 /* CollectionProtocols.swift in Sources */,
+				3A5C12EA1DE652F7000276E0 /* Collectionable.swift in Sources */,
 				3A5C12E51DE65001000276E0 /* PosterDetailViewController.swift in Sources */,
 				3A5C12EE1DE77305000276E0 /* Reusable.swift in Sources */,
 				3A5C12D71DE63F41000276E0 /* GetSpacePosters.swift in Sources */,
@@ -375,7 +374,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 55X7Q8V35C;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SpaceCells/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.marionegro.SpaceCells;
@@ -388,7 +387,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 55X7Q8V35C;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SpaceCells/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.marionegro.SpaceCells;

@@ -29,6 +29,9 @@ class ListPresenterImpl {
                 title: poster.title,
                 subtitle: poster.subtitle,
                 imageName: poster.imageName,
+                selectionBlock: { [weak self] in
+                    self?.router.navigateToDetail(title: poster.title, imageName: poster.imageName)
+                },
                 infoButtonSelectionBlock: { [weak self] in
                     self?.router.showInfo(title: poster.title, message: poster.description)
                 }
@@ -52,34 +55,21 @@ extension ListPresenterImpl: ListPresenter {
     }
 }
 
-extension ListPresenterImpl: CollectionDataSource {
-    
-    var numberOfSections: Int {
-        return 1
-    }
-    
-    var numberOfRows: Int {
-        return viewModels.count
-    }
-    
-    func viewModelForRowAtIndexPath<T>(indexPath: IndexPath) -> T? {
-        return viewModels[indexPath.row] as? T
-    }
-}
-
-extension ListPresenterImpl: CollectionDelegate {
-    
-    func rowSelectedAtIndexPath(indexPath: IndexPath) {
-        let poster = posters[indexPath.row]
-        router.navigateToDetail(title: poster.title, imageName: poster.imageName)
-    }
-}
-
 extension ListPresenterImpl: GetSpacePostersOutput {
     
     func onPosters(posters: [Poster]) {
         self.posters = posters
         populateViewModels()
         view?.reloadData()
+    }
+}
+
+extension ListPresenterImpl: Collectionable {
+    
+    typealias Item = PosterCellViewModel
+    typealias Cell = VerticalPosterCell
+    
+    func items() -> [Int : [PosterCellViewModel]] {
+        return [0: viewModels]
     }
 }
