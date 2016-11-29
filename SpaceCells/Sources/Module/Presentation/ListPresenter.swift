@@ -67,7 +67,6 @@ extension ListPresenterImpl: GetSpacePostersOutput {
 extension ListPresenterImpl: Collectionable {
     
     typealias Item = PosterCellViewModel
-    typealias Cell = VerticalPosterCell
     
     func items() -> [Int : [PosterCellViewModel]] {
         return [0: viewModels]
