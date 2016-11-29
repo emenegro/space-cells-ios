@@ -159,7 +159,7 @@ let tableViewCollectionable = AnyCollectionable(presenter)
 let view = ListViewController(presenter: presenter, tableViewCollectionable: tableViewCollectionable)        
 ```
 
-As you note the collectionable is an instance of `AnyCollectionable`, as we need to erase the type to allow referring it from the `View`.
+As you note the collectionable is an instance of `AnyCollectionable`, as we need to erase the associated type.
 
 #### A final note
 
@@ -174,6 +174,7 @@ While I develop this exercise the first thought that came to my mind was to give
 - Application icon from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File%3ACreative-Tail-rocket.svg).
 - Posters from [JPL Visions of the Future](http://www.jpl.nasa.gov/visions-of-the-future/).
 - This apps uses ['Reusable' extensions](https://medium.com/@gonzalezreal/ios-cell-registration-reusing-with-swift-protocol-extensions-and-generics-c5ac4fb5b75e#.mxlpvb6h0) by Guille González (adapted to Swift 3).
+- Further reading about protocols, generics, associated types and type erasure: [Swift: Associated Types series](http://www.russbishop.net/swift-associated-types) by Russ Bishop.
 
 ## License
 This code is licensed under the [MIT License](LICENSE).
