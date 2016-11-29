@@ -81,9 +81,7 @@ extension VerticalPosterCell {
 
 extension VerticalPosterCell: CollectionableViewModelCellConfigurable {
 
-    typealias ViewModelType = PosterCellViewModel
-    
-    func configure(viewModel: ViewModelType?) {
+    func configure(viewModel: PosterCellViewModel?) {
         self.viewModel = viewModel
         titleLabel.text = viewModel?.title
         subtitleLabel.text = viewModel?.subtitle

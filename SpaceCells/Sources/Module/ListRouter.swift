@@ -34,7 +34,7 @@ extension ListRouter: ModuleFactory {
         let interactor = GetSpacePostersImpl(repository: repository)
         let router = ListRouter(mainRouter: mainRouter)
         let presenter = ListPresenterImpl(interactor: interactor, router: router)
-        let tableViewCollectionable: AnyCollectionable<PosterCellViewModel> = AnyCollectionable(presenter)
+        let tableViewCollectionable = AnyCollectionable(presenter)
         let view = ListViewController(presenter: presenter, tableViewCollectionable: tableViewCollectionable)
         
         repository.output = interactor
