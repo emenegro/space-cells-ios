@@ -1,13 +1,5 @@
-//
-//  MockCollectionable.swift
-//  SpaceCells
-//
-//  Created by Mario on 30/11/16.
-//  Copyright © 2016 Mario Negro. All rights reserved.
-//
 
 import Foundation
-//@testable import SpaceCells
 
 class MockCollectionableViewModel: CollectionableViewModel {
     

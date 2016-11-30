@@ -1,6 +1,5 @@
 
 import XCTest
-//@testable import SpaceCells
 
 class CollectionableTests: XCTestCase {
     
