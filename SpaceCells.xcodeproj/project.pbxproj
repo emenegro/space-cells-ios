@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A229AAE1DEF13D600E514A9 /* CollectionableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A229AAD1DEF13D600E514A9 /* CollectionableTests.swift */; };
+		3A229AB01DEF148900E514A9 /* MockCollectionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A229AAF1DEF148900E514A9 /* MockCollectionable.swift */; };
+		3A229AB11DEF1CAB00E514A9 /* Collectionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C12E91DE652F7000276E0 /* Collectionable.swift */; };
 		3A59AEC01DE4D4ED002CE5BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A59AEBF1DE4D4ED002CE5BE /* AppDelegate.swift */; };
 		3A59AEC71DE4D4ED002CE5BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A59AEC61DE4D4ED002CE5BE /* Assets.xcassets */; };
 		3A59AECA1DE4D4ED002CE5BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A59AEC81DE4D4ED002CE5BE /* LaunchScreen.storyboard */; };
@@ -29,7 +32,21 @@
 		3AE0DBB01DE9DE2A0048D5B7 /* Poster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE0DBAF1DE9DE2A0048D5B7 /* Poster.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3A229AA81DEF13AB00E514A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A59AEB41DE4D4ED002CE5BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A59AEBB1DE4D4ED002CE5BE;
+			remoteInfo = SpaceCells;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		3A229AA31DEF13AB00E514A9 /* SpaceCellsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceCellsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A229AA71DEF13AB00E514A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A229AAD1DEF13D600E514A9 /* CollectionableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionableTests.swift; sourceTree = "<group>"; };
+		3A229AAF1DEF148900E514A9 /* MockCollectionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCollectionable.swift; sourceTree = "<group>"; };
 		3A59AEBC1DE4D4ED002CE5BE /* SpaceCells.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceCells.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A59AEBF1DE4D4ED002CE5BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A59AEC61DE4D4ED002CE5BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +72,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3A229AA01DEF13AB00E514A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3A59AEB91DE4D4ED002CE5BE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -65,10 +89,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A229AA41DEF13AB00E514A9 /* SpaceCellsTests */ = {
+			isa = PBXGroup;
+			children = (
+				3A229AA71DEF13AB00E514A9 /* Info.plist */,
+				3A229AAD1DEF13D600E514A9 /* CollectionableTests.swift */,
+				3A229AAF1DEF148900E514A9 /* MockCollectionable.swift */,
+			);
+			path = SpaceCellsTests;
+			sourceTree = "<group>";
+		};
 		3A59AEB31DE4D4ED002CE5BE = {
 			isa = PBXGroup;
 			children = (
 				3A59AEBE1DE4D4ED002CE5BE /* SpaceCells */,
+				3A229AA41DEF13AB00E514A9 /* SpaceCellsTests */,
 				3A59AEBD1DE4D4ED002CE5BE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				3A59AEBC1DE4D4ED002CE5BE /* SpaceCells.app */,
+				3A229AA31DEF13AB00E514A9 /* SpaceCellsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -176,6 +212,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3A229AA21DEF13AB00E514A9 /* SpaceCellsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A229AAC1DEF13AB00E514A9 /* Build configuration list for PBXNativeTarget "SpaceCellsTests" */;
+			buildPhases = (
+				3A229A9F1DEF13AB00E514A9 /* Sources */,
+				3A229AA01DEF13AB00E514A9 /* Frameworks */,
+				3A229AA11DEF13AB00E514A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A229AA91DEF13AB00E514A9 /* PBXTargetDependency */,
+			);
+			name = SpaceCellsTests;
+			productName = SpaceCellsTests;
+			productReference = 3A229AA31DEF13AB00E514A9 /* SpaceCellsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		3A59AEBB1DE4D4ED002CE5BE /* SpaceCells */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A59AECE1DE4D4ED002CE5BE /* Build configuration list for PBXNativeTarget "SpaceCells" */;
@@ -203,6 +257,12 @@
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Mario Negro";
 				TargetAttributes = {
+					3A229AA21DEF13AB00E514A9 = {
+						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3A59AEBB1DE4D4ED002CE5BE;
+					};
 					3A59AEBB1DE4D4ED002CE5BE = {
 						CreatedOnToolsVersion = 8.1;
 						ProvisioningStyle = Automatic;
@@ -223,11 +283,19 @@
 			projectRoot = "";
 			targets = (
 				3A59AEBB1DE4D4ED002CE5BE /* SpaceCells */,
+				3A229AA21DEF13AB00E514A9 /* SpaceCellsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3A229AA11DEF13AB00E514A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3A59AEBA1DE4D4ED002CE5BE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -241,6 +309,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3A229A9F1DEF13AB00E514A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A229AAE1DEF13D600E514A9 /* CollectionableTests.swift in Sources */,
+				3A229AB01DEF148900E514A9 /* MockCollectionable.swift in Sources */,
+				3A229AB11DEF1CAB00E514A9 /* Collectionable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3A59AEB81DE4D4ED002CE5BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -267,6 +345,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		3A229AA91DEF13AB00E514A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A59AEBB1DE4D4ED002CE5BE /* SpaceCells */;
+			targetProxy = 3A229AA81DEF13AB00E514A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		3A59AEC81DE4D4ED002CE5BE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -279,6 +365,33 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3A229AAA1DEF13AB00E514A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = SpaceCellsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marionegro.SpaceCellsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpaceCells.app/SpaceCells";
+			};
+			name = Debug;
+		};
+		3A229AAB1DEF13AB00E514A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = SpaceCellsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marionegro.SpaceCellsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpaceCells.app/SpaceCells";
+			};
+			name = Release;
+		};
 		3A59AECC1DE4D4ED002CE5BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -399,6 +512,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3A229AAC1DEF13AB00E514A9 /* Build configuration list for PBXNativeTarget "SpaceCellsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A229AAA1DEF13AB00E514A9 /* Debug */,
+				3A229AAB1DEF13AB00E514A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		3A59AEB71DE4D4ED002CE5BE /* Build configuration list for PBXProject "SpaceCells" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

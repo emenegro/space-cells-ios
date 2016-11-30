@@ -12,7 +12,7 @@ protocol CollectionableViewModel {
 
 protocol Collectionable {
     associatedtype Item: CollectionableViewModel
-    func items() -> [Int: [Item]]
+    func items() -> [Int: [Item]]?
     func numberOfSections() -> Int
     func numberOfRows(inSection section: Int) -> Int
     func viewModelForRowAtIndexPath<Item>(indexPath: IndexPath) -> Item?
@@ -22,15 +22,15 @@ protocol Collectionable {
 extension Collectionable {
     
     func numberOfSections() -> Int {
-        return items().count
+        return items()?.count ?? 0
     }
     
     func numberOfRows(inSection section: Int) -> Int {
-        return items()[section]?.count ?? 0
+        return items()?[section]?.count ?? 0
     }
     
     func viewModelForRowAtIndexPath<Item>(indexPath: IndexPath) -> Item? {
-        let sectionItems = items()[indexPath.section]
+        let sectionItems = items()?[indexPath.section]
         return sectionItems?[indexPath.row] as? Item
     }
     
@@ -43,7 +43,7 @@ extension Collectionable {
 
 class AnyCollectionable<Item>: Collectionable where Item: CollectionableViewModel {
     
-    private let _items: (() -> [Int: [Item]])
+    private let _items: (() -> [Int: [Item]]?)
     private let _numberOfSections: (() -> Int)
     private let _numberOfRows: ((_ section: Int) -> Int)
     private let _viewModelForRowAtIndexPath: ((_ indexPath: IndexPath) -> Item?)
@@ -57,7 +57,7 @@ class AnyCollectionable<Item>: Collectionable where Item: CollectionableViewMode
         _rowSelectedAtIndexPath = collectionable.rowSelectedAtIndexPath
     }
     
-    func items() -> [Int: [Item]] {
+    func items() -> [Int: [Item]]? {
         return _items()
     }
     
