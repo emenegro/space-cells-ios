@@ -1,5 +1,5 @@
 
-import UIKit
+import Foundation
 
 protocol ListPresenter {
     var title: String { get }
