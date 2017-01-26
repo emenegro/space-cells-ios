@@ -25,7 +25,7 @@ class MockCollectionable: Collectionable {
         self.empty = empty
     }
     
-    func items() -> [Int : [MockCollectionableViewModel]]? {
+    func items() -> [Section : [MockCollectionableViewModel]]? {
         
         guard !empty else {
             return nil
