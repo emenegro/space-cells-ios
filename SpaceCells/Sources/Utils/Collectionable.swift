@@ -1,6 +1,8 @@
 
 import Foundation
 
+typealias Section = Int
+
 protocol CollectionableViewModelCellConfigurable {
     associatedtype CollectionableViewModelType: CollectionableViewModel
     func configure(viewModel: CollectionableViewModelType?)
@@ -12,20 +14,20 @@ protocol CollectionableViewModel {
 
 protocol Collectionable {
     associatedtype Item: CollectionableViewModel
-    func items() -> [Int: [Item]]?
-    func numberOfSections() -> Int
-    func numberOfRows(inSection section: Int) -> Int
+    func items() -> [Section: [Item]]?
+    func numberOfSections() -> Section
+    func numberOfRows(inSection section: Section) -> Int
     func viewModelForRowAtIndexPath<Item>(indexPath: IndexPath) -> Item?
     func rowSelectedAtIndexPath(indexPath: IndexPath)
 }
 
 extension Collectionable {
     
-    func numberOfSections() -> Int {
+    func numberOfSections() -> Section {
         return items()?.count ?? 0
     }
     
-    func numberOfRows(inSection section: Int) -> Int {
+    func numberOfRows(inSection section: Section) -> Int {
         return items()?[section]?.count ?? 0
     }
     
@@ -43,9 +45,9 @@ extension Collectionable {
 
 class AnyCollectionable<Item>: Collectionable where Item: CollectionableViewModel {
     
-    private let _items: (() -> [Int: [Item]]?)
-    private let _numberOfSections: (() -> Int)
-    private let _numberOfRows: ((_ section: Int) -> Int)
+    private let _items: (() -> [Section: [Item]]?)
+    private let _numberOfSections: (() -> Section)
+    private let _numberOfRows: ((_ section: Section) -> Int)
     private let _viewModelForRowAtIndexPath: ((_ indexPath: IndexPath) -> Item?)
     private let _rowSelectedAtIndexPath: ((_ indexPath: IndexPath) -> Void)
     
@@ -57,15 +59,15 @@ class AnyCollectionable<Item>: Collectionable where Item: CollectionableViewMode
         _rowSelectedAtIndexPath = collectionable.rowSelectedAtIndexPath
     }
     
-    func items() -> [Int: [Item]]? {
+    func items() -> [Section: [Item]]? {
         return _items()
     }
     
-    func numberOfSections() -> Int {
+    func numberOfSections() -> Section {
         return _numberOfSections()
     }
     
-    func numberOfRows(inSection section: Int) -> Int {
+    func numberOfRows(inSection section: Section) -> Int {
         return _numberOfRows(section)
     }
     
