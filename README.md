@@ -4,7 +4,7 @@
 
 Exercising collection view **loading**, **configuration** and **interaction** on iOS VIPER architecture.
 
-The motivation is to explore the implementation of a mechanism tho allow the interaction with components inside cells without involving the view.
+The motivation is to explore the implementation of a mechanism to allow the interaction with components inside cells without involving the view.
 
 ## `Collectionable` protocols
 
@@ -17,9 +17,9 @@ A protocol to describe the **loading** and **interaction** of a collection view 
 ```Swift
 protocol Collectionable {
     associatedtype Item: CollectionableViewModel
-    func items() -> [Int: [Item]]
-    func numberOfSections() -> Int
-    func numberOfRows(inSection section: Int) -> Int
+    func items() -> [Section: [Item]]
+    func numberOfSections() -> Section
+    func numberOfRows(inSection section: Section) -> Int
     func viewModelForRowAtIndexPath<Item>(indexPath: IndexPath) -> Item?
     func rowSelectedAtIndexPath(indexPath: IndexPath)
 }
@@ -91,7 +91,7 @@ The `Presenter` manages these view models so it has to conform to `Collectionabl
 
 ```Swift
 extension ListPresenterImpl: Collectionable {   
-    func items() -> [Int : [PosterCellViewModel]] {
+    func items() -> [Section : [PosterCellViewModel]] {
         return [0: viewModels]
     }
 }
