@@ -42,7 +42,7 @@ class CollectionableTests: XCTestCase {
         
         let filledCollectionable = mockAnyCollectionable(empty: false)
         
-        let viewModel: MockCollectionableViewModel? = filledCollectionable.viewModelForRowAtIndexPath(indexPath: IndexPath(row: 2, section: 1))
+        let viewModel: SpyCollectionableViewModel? = filledCollectionable.viewModelForRowAtIndexPath(indexPath: IndexPath(row: 2, section: 1))
         
         XCTAssertNotNil(viewModel)
         XCTAssertEqual(viewModel?.text, "1.2")
@@ -55,14 +55,14 @@ class CollectionableTests: XCTestCase {
         
         filledCollectionable.rowSelectedAtIndexPath(indexPath: indexPath)
         
-        let viewModel: MockCollectionableViewModel? = filledCollectionable.viewModelForRowAtIndexPath(indexPath: indexPath)
+        let viewModel: SpyCollectionableViewModel? = filledCollectionable.viewModelForRowAtIndexPath(indexPath: indexPath)
         XCTAssertTrue(viewModel!.onRowSelectedCalled)
     }
 }
 
 extension CollectionableTests {
     
-    func mockAnyCollectionable(empty: Bool) -> AnyCollectionable<MockCollectionableViewModel> {
+    func mockAnyCollectionable(empty: Bool) -> AnyCollectionable<SpyCollectionableViewModel> {
         let collectionable = MockCollectionable(empty: empty)
         return AnyCollectionable(collectionable)
     }

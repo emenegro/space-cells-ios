@@ -261,7 +261,6 @@
 						CreatedOnToolsVersion = 8.1;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 3A59AEBB1DE4D4ED002CE5BE;
 					};
 					3A59AEBB1DE4D4ED002CE5BE = {
 						CreatedOnToolsVersion = 8.1;
@@ -375,7 +374,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpaceCells.app/SpaceCells";
 			};
 			name = Debug;
 		};
@@ -388,7 +386,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.marionegro.SpaceCellsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpaceCells.app/SpaceCells";
 			};
 			name = Release;
 		};
