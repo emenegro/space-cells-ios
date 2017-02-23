@@ -1,4 +1,5 @@
-# Space Cells
+# Space Cells 
+[![codebeat badge](https://codebeat.co/badges/591a72be-11a3-45dd-861b-5cfdb837696b)](https://codebeat.co/projects/github-com-emenegro-space-cells-ios-master)
 
 ![Icon](etc/icon.png)
 
