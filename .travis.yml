@@ -2,3 +2,5 @@ language: objective-c
 osx_image: xcode8.3
 xcode_project: SpaceCells.xcodeproj
 xcode_scheme: SpaceCells
+script:
+  - xcodebuild clean test -sdk iphonesimulator -project SpaceCells.xcodeproj -scheme SpaceCells -destination 'platform=iOS Simulator,OS=10.0,name=iPhone SE'
