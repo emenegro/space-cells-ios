@@ -1,5 +1,5 @@
 # Space Cells 
-[![codebeat badge](https://codebeat.co/badges/591a72be-11a3-45dd-861b-5cfdb837696b)](https://codebeat.co/projects/github-com-emenegro-space-cells-ios-master)
+[![codebeat badge](https://codebeat.co/badges/591a72be-11a3-45dd-861b-5cfdb837696b)](https://codebeat.co/projects/github-com-emenegro-space-cells-ios-master) [![Build Status](https://travis-ci.org/emenegro/space-cells-ios.svg?branch=master)](https://travis-ci.org/emenegro/space-cells-ios)
 
 ![Icon](etc/icon.png)
 
