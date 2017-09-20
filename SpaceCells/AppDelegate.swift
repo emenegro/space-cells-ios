@@ -12,7 +12,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainRouter = MainRouterImpl(window: window)
         let rootViewController = ListRouter.create(withMainRouter: mainRouter)
         let navigationController = UINavigationController(rootViewController: rootViewController)
-        
+        navigationController.navigationBar.prefersLargeTitles = true
+        navigationController.navigationItem.largeTitleDisplayMode = .always
+
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
         

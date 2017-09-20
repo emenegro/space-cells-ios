@@ -35,23 +35,25 @@ class ListViewController: UIViewController {
 }
 
 extension ListViewController {
-	
+
+    override func loadView() {
+        self.view = tableView
+    }
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
-        edgesForExtendedLayout = UIRectEdge(rawValue: 0)
-        view.backgroundColor = AppColors.backgroundSecondary
-        title = presenter.title
-        
-		view.addSubview(tableView)
-        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        setupView()
 	}
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter.viewWillAppear()
+    }
+
+    private func setupView() {
+        edgesForExtendedLayout = UIRectEdge(rawValue: 0)
+        view.backgroundColor = AppColors.backgroundSecondary
+        title = presenter.title
     }
 }
 

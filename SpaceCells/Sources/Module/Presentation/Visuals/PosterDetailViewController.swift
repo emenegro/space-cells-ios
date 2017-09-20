@@ -11,23 +11,27 @@ class PosterDetailViewController: UIViewController {
         posterImageView.translatesAutoresizingMaskIntoConstraints = false
         posterImageView.contentMode = .scaleAspectFit
         self.view.addSubview(posterImageView)
-        posterImageView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 10).isActive = true
-        posterImageView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -10).isActive = true
-        posterImageView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 10).isActive = true
-        posterImageView.bottomAnchor.constraint(equalTo: self.infoWebButton.topAnchor, constant: -10).isActive = true
+        NSLayoutConstraint.activate([
+            posterImageView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 10),
+            posterImageView.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -10),
+            posterImageView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            posterImageView.bottomAnchor.constraint(equalTo: self.infoWebButton.topAnchor, constant: -10)
+            ])
         return posterImageView
     }()
     
     lazy var infoWebButton: UIButton = {
         let button = UIButton(type: UIButtonType.system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle(NSLocalizedString("txt_show_info", comment: ""), for: .normal)
+        button.setTitle(L10n.showInfo.localized, for: .normal)
         button.backgroundColor = AppColors.background
         self.view.addSubview(button)
-        button.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-        button.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
-        button.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        NSLayoutConstraint.activate([
+            button.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor),
+            button.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor),
+            button.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
+            button.heightAnchor.constraint(equalToConstant: 44)
+            ])
         return button
     }()
     

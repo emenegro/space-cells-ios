@@ -13,7 +13,7 @@ class PosterInfoViewController: UIAlertController {
         self.title = title
         self.message = message
         
-        let acceptString = NSLocalizedString("txt_accept", comment: "")
+        let acceptString = L10n.accept.localized
         let acceptAction = UIAlertAction(title: acceptString, style: .cancel, handler: { [weak self] (action) -> Void in
             self?.dismiss(animated: true, completion: nil)
         })

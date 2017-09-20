@@ -12,10 +12,12 @@ class VerticalPosterCell: UITableViewCell {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         self.addSubview(imageView)
-        imageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        imageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        imageView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-        imageView.heightAnchor.constraint(equalToConstant: 125).isActive = true
+        NSLayoutConstraint.activate([
+            imageView.leftAnchor.constraint(equalTo: self.leftAnchor),
+            imageView.topAnchor.constraint(equalTo: self.topAnchor),
+            imageView.rightAnchor.constraint(equalTo: self.rightAnchor),
+            imageView.heightAnchor.constraint(equalToConstant: 125)
+            ])
         return imageView
     }()
     
@@ -25,9 +27,11 @@ class VerticalPosterCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 26)
         label.textColor = AppColors.foreground
         self.addSubview(label)
-        label.topAnchor.constraint(equalTo: self.posterImageView.bottomAnchor, constant: 5).isActive = true
-        label.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10).isActive = true
-        label.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10).isActive = true
+        NSLayoutConstraint.activate([
+            label.topAnchor.constraint(equalTo: self.posterImageView.bottomAnchor, constant: 5),
+            label.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10),
+            label.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10)
+            ])
         return label
     }()
     
@@ -39,10 +43,12 @@ class VerticalPosterCell: UITableViewCell {
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         self.addSubview(label)
-        label.leftAnchor.constraint(equalTo: self.titleLabel.leftAnchor).isActive = true
-        label.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor).isActive = true
-        label.rightAnchor.constraint(equalTo: self.titleLabel.rightAnchor, constant: -50).isActive = true
-        label.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10).isActive = true
+        NSLayoutConstraint.activate([
+            label.leftAnchor.constraint(equalTo: self.titleLabel.leftAnchor),
+            label.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor),
+            label.rightAnchor.constraint(equalTo: self.titleLabel.rightAnchor, constant: -50),
+            label.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10)
+            ])
         return label
     }()
     
@@ -50,8 +56,10 @@ class VerticalPosterCell: UITableViewCell {
         let button = UIButton(type: .infoDark)
         button.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(button)
-        button.centerYAnchor.constraint(equalTo: self.titleLabel.centerYAnchor).isActive = true
-        button.rightAnchor.constraint(equalTo: self.titleLabel.rightAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            button.centerYAnchor.constraint(equalTo: self.titleLabel.centerYAnchor),
+            button.rightAnchor.constraint(equalTo: self.titleLabel.rightAnchor)
+            ])
         return button
     }()
     

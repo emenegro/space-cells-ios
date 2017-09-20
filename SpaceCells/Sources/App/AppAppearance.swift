@@ -24,10 +24,12 @@ private extension AppAppearance {
     }
     
     static func applyNavigationBarStyle() {
+        let textAttributes = [NSAttributedStringKey.foregroundColor : AppColors.foreground]
         let appearance = UINavigationBar.appearance()
         appearance.tintColor = AppColors.tint
         appearance.barTintColor = AppColors.background
         appearance.isTranslucent = false
-        appearance.titleTextAttributes = [NSForegroundColorAttributeName : AppColors.foreground]
+        appearance.titleTextAttributes = textAttributes
+        appearance.largeTitleTextAttributes = textAttributes
     }
 }

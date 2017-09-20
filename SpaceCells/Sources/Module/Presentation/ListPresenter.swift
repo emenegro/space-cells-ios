@@ -24,17 +24,21 @@ class ListPresenterImpl {
         var viewModels: [PosterCellViewModel] = []
         
         for poster in posters {
-            
+
+            let selectionBlock: () -> Void = { [weak self] in
+                self?.router.navigateToDetail(title: poster.title, imageName: poster.imageName)
+            }
+
+            let infoButtonSelectionBlock: () -> Void = { [weak self] in
+                self?.router.showInfo(title: poster.title, message: poster.description)
+            }
+
             let viewModel = PosterCellViewModel(
                 title: poster.title,
                 subtitle: poster.subtitle,
                 imageName: poster.imageName,
-                selectionBlock: { [weak self] in
-                    self?.router.navigateToDetail(title: poster.title, imageName: poster.imageName)
-                },
-                infoButtonSelectionBlock: { [weak self] in
-                    self?.router.showInfo(title: poster.title, message: poster.description)
-                }
+                selectionBlock: selectionBlock,
+                infoButtonSelectionBlock: infoButtonSelectionBlock
             )
             
             viewModels.append(viewModel)
@@ -47,7 +51,7 @@ class ListPresenterImpl {
 extension ListPresenterImpl: ListPresenter {
     
     var title: String {
-        return NSLocalizedString("txt_app_name", comment: "")
+        return L10n.appName.localized
     }
     
     func viewWillAppear() {
